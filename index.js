@@ -16,5 +16,11 @@ test.then((result)=> {
   // ! 입력 받은 html 파일 이름
   const htmlFileName = result.htmlFileName;
   // console.log(htmlFileName);
-  fs.writeFileSync(`./result/${htmlFileName}.html`, "대머리", "utf-8");
+  const filePath = `./result/${htmlFileName}.html`;
+  const fileContent = "";
+  try {
+    fs.writeFileSync(filePath, fileContent, "utf-8");
+  } catch (err) {
+    console.log(err);
+  }
 });
