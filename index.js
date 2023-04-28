@@ -15,7 +15,7 @@ const test = inquirer.prompt([{
 {
   // ? title 태그의 기본 정보
   type : "input",
-  name : "title",
+  name : "htmlTitleInfo",
   message : "title 태그의 기본 정보를 입력하세요 :"
 },
 {
@@ -28,7 +28,7 @@ const test = inquirer.prompt([{
 {
   // ? 본문 <p>내용</p>이 작성 가능하게
   type : "input",
-  name : "fileContent",
+  name : "htmlContent",
   message : "본문 내용을 작성하세요 :"
 }
 ]);
@@ -36,7 +36,16 @@ test.then((result)=> {
   // console.log(result);
   // ! 입력 받은 html 파일 이름
   const htmlFileName = result.htmlFileName;
-  // console.log(htmlFileName);
+  // ! 입력 받은 title 정보
+  const htmlTitleInfo = result.htmlTitleInfo;
+  // ! 입력 받은 root 사용 여부
+  const rootCheck = result.rootCheck;
+  // ! 입력 받은 본문 내용 -> <p>내용</p>
+  const htmlContent = result.htmlContent;
+  console.log(htmlFileName);
+  console.log(htmlTitleInfo);
+  console.log(rootCheck);
+  console.log(htmlContent);
   
   // ? 위 abc 항을 모두 충족하는 형태의 CLI 입력을 모두 받고, 입력 데이터를 기초 데이터로 HTML 파일이 /result 디렉토리에 생성
   const filePath = `./result/${htmlFileName}.html`;
