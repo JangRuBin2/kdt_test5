@@ -20,10 +20,10 @@ const test = inquirer.prompt([{
 },
 {
   // ? body 태그의 자식으로서 최상위 div #root 태그 사용 유무 선택 가능한 방식
-  type : "checkbox",
+  type : "confirm",
   name : "rootCheck",
-  message : "div(#root)를 사용하시겠습니까? :",
-  choices : ['네', '아니요']
+  message : "div(#root)를 사용하시겠습니까? :"
+  // choices : ['네', '아니요']
 },
 {
   // ? 본문 <p>내용</p>이 작성 가능하게
@@ -44,6 +44,7 @@ test.then((result)=> {
   const htmlContent = result.htmlContent;
   console.log(htmlFileName);
   console.log(htmlTitleInfo);
+  // ? confirm으로 수정
   console.log(rootCheck);
   console.log(htmlContent);
   
