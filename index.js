@@ -55,7 +55,10 @@ test.then((result)=> {
     // 입력 받은 파일 생성
     // ! 파일 이름이 입력되지 않았을 땐 파일생성 안함
     if(htmlFileName !== "") {
-    fs.writeFileSync(filePath, htmlContent, "utf-8");}
+      // 파일 생성
+    fs.writeFileSync(filePath, htmlContent, "utf-8");
+  
+  }
   } catch (err) {
     console.log(err);
   }
