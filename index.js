@@ -1,5 +1,6 @@
 import inquirer from "inquirer"
 import {program} from "commander"
+import fs from "fs"
 // ! commander라는 이름을 지원하지 않음
 // console.log(program);
 // console.log(inquirer);
@@ -12,6 +13,8 @@ const test = inquirer.prompt([{
 }]);
 test.then((result)=> {
   // console.log(result);
+  // ! 입력 받은 html 파일 이름
   const htmlFileName = result.htmlFileName;
-  console.log(htmlFileName);
-})
+  // console.log(htmlFileName);
+  fs.writeFileSync(`./result/${htmlFileName}.html`, "대머리", "utf-8");
+});
