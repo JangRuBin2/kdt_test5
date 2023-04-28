@@ -41,7 +41,7 @@ test.then((result)=> {
   // ! 입력 받은 root 사용 여부
   const inputRootCheck = result.inputRootCheck;
   // ! 입력 받은 본문 내용 -> <p>내용</p>
-  const inputHtmlContent = `<p>${result.inputHtmlContent}</p>`;
+  const inputHtmlContent = result.inputHtmlContent;
   // console.log("비지 않았니?"+htmlFileName);
   // console.log(htmlTitleInfo);
   // ? confirm으로 수정
@@ -61,7 +61,7 @@ test.then((result)=> {
     <title>${result.inputHtmlTitleInfo}</title>
   </head>
   <body>
-    
+    <p>${result.inputHtmlContent}</p>
   </body>
   </html>`;
   // const fileContent = "";
