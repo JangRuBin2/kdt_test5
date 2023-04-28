@@ -41,7 +41,7 @@ test.then((result)=> {
   // ! 입력 받은 root 사용 여부
   const rootCheck = result.rootCheck;
   // ! 입력 받은 본문 내용 -> <p>내용</p>
-  const htmlContent = result.htmlContent;
+  const htmlContent = `<p>${result.htmlContent}</p>`;
   console.log("비지 않았니?"+htmlFileName);
   // console.log(htmlTitleInfo);
   // ? confirm으로 수정
