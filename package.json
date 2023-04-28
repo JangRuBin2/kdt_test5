@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/JangRuBin2/kdt_test5.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/JangRuBin2/kdt_test5#readme",
   "dependencies": {
+    "commander": "^10.0.1",
     "inquirer": "^9.2.0"
   }
 }
