@@ -50,6 +50,10 @@ test.then((result)=> {
   // console.log(htmlContent);
   
   // ? 위 abc 항을 모두 충족하는 형태의 CLI 입력을 모두 받고, 입력 데이터를 기초 데이터로 HTML 파일이 /result 디렉토리에 생성
+  const testSciprt = ` <script>
+  const root = document.getElementById("root");
+  console.log(root);
+</script>`;
   // ! html 파일 제목
   const filePath = `./result/${inputHtmlFileName}.html`;
   // ! html 파일 내용
@@ -65,6 +69,7 @@ test.then((result)=> {
     <div id="root">
       <p>${result.inputHtmlContent}</p>
     </div>
+    ${testSciprt}
   </body>
   </html>`;
   // const fileContent = "";
@@ -79,7 +84,7 @@ test.then((result)=> {
       // document.body.appendChild = div;
       // const root = document.getElementById("root");
       // console.log(root)
-
+      
   }
   } catch (err) {
     console.log(err);
