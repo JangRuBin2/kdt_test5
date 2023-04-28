@@ -1,6 +1,7 @@
 import inquirer from "inquirer"
 import {program} from "commander"
 import fs from "fs"
+import { rootCertificates } from "tls";
 // ! commander라는 이름을 지원하지 않음
 // console.log(program);
 // console.log(inquirer);
@@ -61,7 +62,9 @@ test.then((result)=> {
     <title>${result.inputHtmlTitleInfo}</title>
   </head>
   <body>
+    <div id="root">
       <p>${result.inputHtmlContent}</p>
+    </div>
   </body>
   </html>`;
   // const fileContent = "";
@@ -71,9 +74,11 @@ test.then((result)=> {
     if(inputHtmlFileName !== "") {
       // 파일 생성
     fs.writeFileSync(filePath, html, "utf-8");
-      const div = document.createElement("div");
-      div.innerText = "대머리";
-      document.body.appendChild = div;
+      // const div = document.createElement("div");
+      // div.innerText = "대머리";
+      // document.body.appendChild = div;
+      // const root = document.getElementById("root");
+      // console.log(root)
 
   }
   } catch (err) {
