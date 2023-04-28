@@ -42,7 +42,7 @@ test.then((result)=> {
   const rootCheck = result.rootCheck;
   // ! 입력 받은 본문 내용 -> <p>내용</p>
   const htmlContent = result.htmlContent;
-  // console.log(htmlFileName);
+  console.log("비지 않았니?"+htmlFileName);
   // console.log(htmlTitleInfo);
   // ? confirm으로 수정
   // console.log(rootCheck);
@@ -52,7 +52,10 @@ test.then((result)=> {
   const filePath = `./result/${htmlFileName}.html`;
   // const fileContent = "";
   try {
-    fs.writeFileSync(filePath, htmlContent, "utf-8");
+    // 입력 받은 파일 생성
+    // ! 파일 이름이 입력되지 않았을 땐 파일생성 안함
+    if(htmlFileName !== "") {
+    fs.writeFileSync(filePath, htmlContent, "utf-8");}
   } catch (err) {
     console.log(err);
   }
