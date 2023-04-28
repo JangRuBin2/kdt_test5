@@ -61,7 +61,7 @@ test.then((result)=> {
     <title>${result.inputHtmlTitleInfo}</title>
   </head>
   <body>
-    <p>${result.inputHtmlContent}</p>
+      <p>${result.inputHtmlContent}</p>
   </body>
   </html>`;
   // const fileContent = "";
@@ -71,7 +71,10 @@ test.then((result)=> {
     if(inputHtmlFileName !== "") {
       // 파일 생성
     fs.writeFileSync(filePath, html, "utf-8");
-  
+      const div = document.createElement("div");
+      div.innerText = "대머리";
+      document.body.appendChild = div;
+
   }
   } catch (err) {
     console.log(err);
