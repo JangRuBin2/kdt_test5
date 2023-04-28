@@ -63,13 +63,26 @@ test.then((result)=> {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${result.inputHtmlTitleInfo}</title>
+    <title>${inputHtmlTitleInfo}</title>
+  </head>
+  <body>
+      <p>${inputHtmlContent}</p>
+  </body>
+  </html>`;
+
+  const useRootHtml =
+ `<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${inputHtmlTitleInfo}</title>
   </head>
   <body>
     <div id="root">
-      <p>${result.inputHtmlContent}</p>
+      <p>${inputHtmlContent}</p>
     </div>
-    ${testSciprt}
   </body>
   </html>`;
   // const fileContent = "";
@@ -77,14 +90,20 @@ test.then((result)=> {
     // 입력 받은 파일 생성
     // ! 파일 이름이 입력되지 않았을 땐 파일생성 안함
     if(inputHtmlFileName !== "") {
-      // 파일 생성
-    fs.writeFileSync(filePath, html, "utf-8");
+      // ! root 사용하는 html
+      if(inputRootCheck === true) {
+        fs.writeFileSync(filePath, useRootHtml, "utf-8");
+      }
+      // ! root 사용 안하는 html 
+      else {
+        fs.writeFileSync(filePath, html, "utf-8");
+      }
       // const div = document.createElement("div");
       // div.innerText = "대머리";
       // document.body.appendChild = div;
       // const root = document.getElementById("root");
       // console.log(root)
-      
+
   }
   } catch (err) {
     console.log(err);
