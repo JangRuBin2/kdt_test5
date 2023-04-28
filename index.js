@@ -42,17 +42,17 @@ test.then((result)=> {
   const rootCheck = result.rootCheck;
   // ! 입력 받은 본문 내용 -> <p>내용</p>
   const htmlContent = result.htmlContent;
-  console.log(htmlFileName);
-  console.log(htmlTitleInfo);
+  // console.log(htmlFileName);
+  // console.log(htmlTitleInfo);
   // ? confirm으로 수정
-  console.log(rootCheck);
-  console.log(htmlContent);
+  // console.log(rootCheck);
+  // console.log(htmlContent);
   
   // ? 위 abc 항을 모두 충족하는 형태의 CLI 입력을 모두 받고, 입력 데이터를 기초 데이터로 HTML 파일이 /result 디렉토리에 생성
   const filePath = `./result/${htmlFileName}.html`;
-  const fileContent = "";
+  // const fileContent = "";
   try {
-    fs.writeFileSync(filePath, fileContent, "utf-8");
+    fs.writeFileSync(filePath, htmlContent, "utf-8");
   } catch (err) {
     console.log(err);
   }
